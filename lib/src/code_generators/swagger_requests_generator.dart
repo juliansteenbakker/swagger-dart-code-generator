@@ -175,8 +175,8 @@ class SwaggerRequestsGenerator extends SwaggerGeneratorBase {
           swaggerRoot: swaggerRoot,
           overridenResponses: Map.fromEntries(
             options.responseOverrideValueMap
-              .where((v) => v.method.isEmpty || v.method == requestType)
-              .map((v) => MapEntry(v.url, v)),
+                .where((v) => v.method.isEmpty || v.method == requestType)
+                .map((v) => MapEntry(v.url, v)),
           ),
         );
 
@@ -508,6 +508,7 @@ class SwaggerRequestsGenerator extends SwaggerGeneratorBase {
           kPath: literalString(path),
           if (hasOptionalBody && !isUrlencoded)
             'optionalBody': refer(true.toString()),
+          'listFormat': refer('ListFormat.comma'),
           if (isUrlencoded)
             'headers': refer('{contentTypeKey: formEncodedHeaders}')
         },
