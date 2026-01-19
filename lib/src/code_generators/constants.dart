@@ -23,10 +23,7 @@ const kBasicTypes = [
   kMap,
 ];
 
-const kBasicSwaggerTypes = [
-  ...kBasicTypes,
-  'number',
-];
+const kBasicSwaggerTypes = [...kBasicTypes, 'number'];
 
 const kMap = 'Map';
 const kMapStringDynamic = 'Map<String,dynamic>';
@@ -52,6 +49,7 @@ const kPath = 'path';
 const kOptionalBody = 'optionalBody';
 const kFormData = 'formData';
 const kMultipart = 'multipart';
+const kIncludeNullQueryVars = 'includeNullQueryVars';
 const kDateTimeFormat = 'date-time';
 const kFactoryConverter = 'factoryConverter';
 const kDeprecatedAnnotation = '@deprecated';
@@ -71,9 +69,9 @@ const kBasicTypesMap = <String, String>{
   'boolean': 'bool',
   'bool': 'bool',
   'string': 'String',
-  'file': 'List<int>',
   'number': 'num',
   'object': 'Object',
+  'file': 'List<int>',
   'num': 'num',
 };
 
@@ -105,3 +103,6 @@ const kServiceHeader = '''
 // SwaggerChopperGenerator
 // **************************************************************************
   ''';
+
+const kSwaggerMetaData = 'SwaggerMetaData';
+const kSwaggerMetaDataParameter = 'swaggerMetaData';
