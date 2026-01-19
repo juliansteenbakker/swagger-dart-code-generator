@@ -491,6 +491,7 @@ class SwaggerRequestsGenerator extends SwaggerGeneratorBase {
       refer(requestType.toUpperCase()).call([], {
         kPath: literalString(path),
         if (hasOptionalBody && !isUrlencoded) 'optionalBody': refer(true.toString()),
+        'listFormat': refer('ListFormat.comma'),
         if (isUrlencoded) 'headers': refer('{contentTypeKey: formEncodedHeaders}'),
         if (includeNullQueryVars) kIncludeNullQueryVars: refer(true.toString()),
       }),
